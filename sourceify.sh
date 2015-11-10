@@ -1,10 +1,13 @@
 #!/bin/bash
 # Downloads the upstream tarball and sets up a source package
-wget https://github.com/irungentoo/filter_audio/archive/master.tar.gz
+NAME=libtoxcore
+UVER=0.1
+DVER=1
+wget https://github.com/irungentoo/toxcore/archive/master.tar.gz
 tar xf master.tar.gz
 rm master.tar.gz
-mv filter_audio-master libfilteraudio-0.1
-tar cfz libfilteraudio_0.1.orig.tar.gz libfilteraudio-0.1
-tar xvf libfilteraudio_0.1-1.debian.tar.xz -C libfilteraudio-0.1/
-dpkg-source -b libfilteraudio-0.1/
+mv toxcore-master "$NAME"-"$UVER"
+tar cfz "$NAME"_"$UVER".orig.tar.gz "$NAME"-"$UVER"
+tar xvf "$NAME"_"$UVER"-"$DVER".debian.tar.xz -C "$NAME"-"$UVER"
+dpkg-source -b "$NAME"-"$UVER"
 
