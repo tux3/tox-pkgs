@@ -5,7 +5,7 @@ GIT_URL=https://github.com/irungentoo/toxcore
 
 git clone $GIT_URL $NAME
 cd $NAME
-UVER=0.1.`git rev-parse HEAD | head -c 7`
+UVER=0.1.`git rev-list --count HEAD`.`git rev-parse HEAD | head -c 7`
 DVER=1
 cd ..
 
