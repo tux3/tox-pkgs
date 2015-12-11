@@ -5,7 +5,7 @@ GIT_URL=https://github.com/tux3/qtox
 
 git clone $GIT_URL $NAME
 cd $NAME
-UVER=`git describe --tags`
+UVER=`git describe --tags | tail -c +2`
 DVER=1
 cd ..
 
